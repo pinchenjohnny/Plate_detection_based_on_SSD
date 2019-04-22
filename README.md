@@ -44,7 +44,7 @@
 
 2. build Caffe
    - 先根据[Caffe instruction](http://caffe.berkeleyvision.org/installation.html), 确保已安装所有依赖包.
-   - 修改根目录下`Makefile.config.example`:
+   - 修改根目录下`Makefile.config.example`, 本文修改如下:
      -  CUDA_DIR :=/usr/local/cuda_75
      -  注释掉CUDA_ARCH的-gencode arch=computer_61, code=sm_61
    -  ```
