@@ -25,6 +25,8 @@
 
 ## Tips
 
+1. 下面默认当前目录为`Plate_detection_based_on_SSD/`
+
 1. 下面提到的脚本无法运行时, 请首先检查是否正确指定脚本内的路径参数. 本文实验中修改的参数都打了`#pinchen`标签, 在脚本中搜索, 辅助修改参数.
 
 2. 运行脚本报no module caffe错时, 终端输入
@@ -33,8 +35,6 @@
    ```
 
    将./python临时添加到PYTHONPATH.
- 
- 3. 下面默认当前目录为`Plate_detection_based_on_SSD/`
 
 ## 准备
 
