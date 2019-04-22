@@ -33,6 +33,8 @@
    ```
 
    将./python临时添加到PYTHONPATH.
+ 
+ 3. 下面默认当前目录为`Plate_detection_based_on_SSD/`
 
 ## 准备
 
@@ -44,7 +46,7 @@
 
 2. build Caffe
    - 先根据[Caffe instruction](http://caffe.berkeleyvision.org/installation.html), 确保已安装所有依赖包.
-   - 修改根目录下`Makefile.config.example`, 本文修改如下:
+   - 修改`./`下`Makefile.config.example`, 本文修改如下:
      -  CUDA_DIR :=/usr/local/cuda_75
      -  注释掉CUDA_ARCH的-gencode arch=computer_61, code=sm_61
    -  ```
