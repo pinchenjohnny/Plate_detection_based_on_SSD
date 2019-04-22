@@ -1,0 +1,3 @@
+/home/pinchen/ssd/caffe/data/PlateDetection/JPEGImages/328_027.jpg	0.916213	829	907	974	947
+/home/pinchen/ssd/caffe/data/PlateDetection/JPEGImages/339_200.jpg	0.937373	756	974	898	1014
+/home/pinchen/ssd/caffe/data/PlateDetection/JPEGImages/369_125.jpg	0.766758	841	938	984	977

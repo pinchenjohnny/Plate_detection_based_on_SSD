@@ -1,0 +1,5 @@
+your_dataset_should_like/JPEGImages/346_015.jpg your_dataset_should_like/Annotations/346_015.xml
+your_dataset_should_like/JPEGImages/373_170.jpg your_dataset_should_like/Annotations/373_170.xml
+your_dataset_should_like/JPEGImages/316_068.jpg your_dataset_should_like/Annotations/316_068.xml
+your_dataset_should_like/JPEGImages/329_061.jpg your_dataset_should_like/Annotations/329_061.xml
+your_dataset_should_like/JPEGImages/321_177.jpg your_dataset_should_like/Annotations/321_177.xml

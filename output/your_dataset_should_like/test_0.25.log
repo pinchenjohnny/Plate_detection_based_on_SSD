@@ -1,0 +1,14 @@
+Predict for 0-/home/pinchen/ssd/caffe/data/PlateDetection/JPEGImages/328_027.jpg
+detected 1 objects, avg_conf = 0.92
+Predict for 1-/home/pinchen/ssd/caffe/data/PlateDetection/JPEGImages/339_200.jpg
+detected 1 objects, avg_conf = 0.94
+Predict for 2-/home/pinchen/ssd/caffe/data/PlateDetection/JPEGImages/369_125.jpg
+detected 1 objects, avg_conf = 0.77
+Predict for 3-/home/pinchen/ssd/caffe/data/PlateDetection/JPEGImages/305_095.jpg
+detected 1 objects, avg_conf = 0.68
+Predict for 4-/home/pinchen/ssd/caffe/data/PlateDetection/JPEGImages/393_060.jpg
+detected 1 objects, avg_conf = 0.97
+Predict for 5-/home/pinchen/ssd/caffe/data/PlateDetection/JPEGImages/386_091.jpg
+detected 1 objects, avg_conf = 0.91
+Predict for 6-/home/pinchen/ssd/caffe/data/PlateDetection/JPEGImages/387_042.jpg
+detected 1 objects, avg_conf = 0.97

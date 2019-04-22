@@ -1,0 +1,4 @@
+your_dataset_should_like/JPEGImages/381_098.jpg your_dataset_should_like/Annotations/381_098.xml
+your_dataset_should_like/JPEGImages/367_181.jpg your_dataset_should_like/Annotations/367_181.xml
+your_dataset_should_like/JPEGImages/386_059.jpg your_dataset_should_like/Annotations/386_059.xml
+your_dataset_should_like/JPEGImages/319_102.jpg your_dataset_should_like/Annotations/319_102.xml

@@ -13,7 +13,7 @@
 
 ---
 
-本文所用数据集未公开，实验环境为Linux CentOS 6.7, python 2.7, cuda 7.5.
+本文所用数据集未公开, 实验环境为Linux CentOS 6.7, python 2.7, cuda 7.5.
 
 **方法手册**如下:
 
@@ -27,11 +27,11 @@
 
 1. 下面默认当前目录为`Plate_detection_based_on_SSD/`
 
-1. 下面提到的文件夹及文件，基本都在git里给出了示例。考虑信息保护，示例图像将会打马。
+2. 文件夹和除脚本外的文件, 仅以示例给出, 如`your_dataset_should_like/`. 考虑信息保护, 示例图像将会打马.
 
-1. 下面提到的脚本无法运行时, 请首先检查是否正确指定脚本内的路径参数. 本文实验中修改的参数都打了`#pinchen`标签, 在脚本中搜索, 辅助修改参数.
+3. 脚本无法运行时, 请首先检查是否正确指定脚本内的路径参数. 本文实验中修改的参数都打了`#pinchen`标签, 在脚本中搜索, 辅助修改参数.
 
-2. 运行脚本报no module caffe错时, 终端输入
+4. 运行脚本报no module caffe错时, 终端执行
    ```
    export PYTHONPATH=$PYTHONPATH:./python
    ```
@@ -68,10 +68,13 @@
 
 1. 仿照VOC数据集建立目录, 组织自己的数据集
 
-   在`./data/your_dataset_name`下, 建立三个文件夹:
+   在`./data/yyour_dataset_should_like`下, 建立三个文件夹:
    - Annotations: 存放标注文件*.xml
    - ImageSets/Main: 存放下面产生的train.txt, val.txt, trainval.txt, test.txt
    - JPEGImage: 存放原图
+
+   标注文件说明: 车牌的标注有name, xmin, ymin, xmax, ymax, 其中name=“plate”, 即“车牌”的英文, 其余4个数值如下图确定:
+   ![annotation_explain.png](./readme_pics/annotation_explain.png)
 
 2. 划分训练/验证/测试集
 
@@ -79,7 +82,22 @@
 
 3. 由数据集生成Caffe SSD所需LMDB文件
 
-    - 修改`./data/your_dataset_name`下的`labelmap_voc.prototxt`, 该文件为检测目标的标签文件, 记录需要训练识别的 $c$ 类目标的信息.
+    - 修改`./data/yyour_dataset_should_like`下的`labelmap.prototxt`, 该文件为检测目标的标签文件, 记录需要训练识别的 $c$ 类目标的信息. 修改示例:
+      ```
+      item {
+      name: "none_of_the_above"
+      label: 0
+      display_name: "background"
+      }
+      item {
+      name: "plate"
+      label: 1
+      display_name: "plate"
+      }
+      ```
+      
+      SSD将背景也当做一类特殊的目标, 包含在 $c$ 类目标里, "background"即为背景. "plate"指车牌.
+
     - 运行`./scripts/`下的`create_list.sh`, 生成三类文件列表:
         - test_name_size.txt: 测试集图像大小, 就像:
   
@@ -89,18 +107,18 @@
 
         - test.txt: 测试集图像-标签一一对应, 就像:
   
-           our_dataset_name/JPEGImages/381_098.jpg our_dataset_name/Annotations/381_098.xml
+           your_dataset_should_like/JPEGImages/381_098.jpg your_dataset_should_like/Annotations/381_098.xml
 
         - trainval.txt: 训练集图像-标签一一对应, 就像:
 
-          our_dataset_name/JPEGImages/346_015.jpg our_dataset_name/Annotations/346_015.xml
+          your_dataset_should_like/JPEGImages/346_015.jpg your_dataset_should_like/Annotations/346_015.xml
       - 运行`./scripts/`下的`create_data.sh`, 生成LMDB文件.
 
 ## 训练
 
-在`./models/`下建立`your_dataset_name/`, 存放训练过程中产生的模型.
+在`./models/`下建立`yyour_dataset_should_like/`, 存放训练过程中产生的模型.
 
-在`./jobs/`下建立`your_dataset_name/`, 存放训练过程中产生的日志文件.
+在`./jobs/`下建立`yyour_dataset_should_like/`, 存放训练过程中产生的日志文件.
 
 修改`./scripts/`下`ssd_vgg_commom.py`参数后运行. 修改内容集中在__main__函数中, 如:
 - project_name: 改为当前...
@@ -115,6 +133,6 @@
 
 ## 测试
 
-在`./output/`下建立`your_dataset_name/`, 存放测试过程中产生的结果和日志文件.
+在`./output/`下建立`yyour_dataset_should_like/`, 存放测试过程中产生的结果和日志文件.
 
 这里改用`./scripts/`下的`ssd_detect_common.py`, 测试并可视化结果.
