@@ -47,6 +47,7 @@
    ```
 
 2. build Caffe
+   - 重新编译后, repo里的文件夹及文件示例将会更新, 可通过git重新查看.
    - 先根据[Caffe instruction](http://caffe.berkeleyvision.org/installation.html), 确保已安装所有依赖包.
    - 修改`./`下`Makefile.config.example`, 本文修改如下:
      -  CUDA_DIR :=/usr/local/cuda_75
